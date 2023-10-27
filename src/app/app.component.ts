@@ -101,11 +101,12 @@ export class AppComponent implements OnInit {
 
   getMontoAPagar(cliente: Cliente) {
 
+    let montoAPagar: number = 0;
    if (cliente.descuento != 0) {
-    return  cliente.consumo * (cliente.descuento / 100);
+    montoAPagar =  cliente.consumo * (cliente.descuento / 100);
    } 
-
-   return cliente.consumo + cliente.deuda;
+   montoAPagar = cliente.consumo + cliente.deuda;
+   return parseFloat(montoAPagar.toFixed(2));
   }
 
   deleteItem(dni: string) {
