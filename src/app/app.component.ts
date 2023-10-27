@@ -157,16 +157,19 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     let formData  = this.fromList.controls;
+    let consumo = formData['consumo'].value;
+    let deuda = formData['deuda'].value;
     let cliente = [
       formData['nombre'].value, 
       formData['apellido'].value, 
       formData['dni'].value, 
       formData['tipoDomicilio'].value, 
-      formData['consumo'].value, 
-      formData['deuda'].value
+      parseFloat(consumo.toFixed(2)),
+      parseFloat(deuda.toFixed(2))
     ]
     this.listaClientes.push(cliente)
     this.procesarLista(this.listaClientes);
+    alert("Se agrego el nuevo cliente satisfactoriamente!")
 
   }
 

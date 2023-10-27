@@ -20,15 +20,19 @@
       </div>
       <div class="form-group">
         <label for="">Tipo de Domicilio</label>
-        <input type="text" formControlName="tipoDomicilio">
+        <!-- <input type="text" formControlName="tipoDomicilio"> -->
+        <select formControlName="tipoDomicilio">
+          <option value="residencial">residencial</option>
+          <option value="comercial">comercial</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="">Consumo KW</label>
-        <input type="text" formControlName="consumo">
+        <input type="number" formControlName="consumo">
       </div>
       <div class="form-group">
         <label for="">Deuda</label>
-        <input type="text" formControlName="deuda">
+        <input type="number" formControlName="deuda">
       </div>
 
       <div class="container-btn">
@@ -74,7 +78,7 @@
       <div class="column">{{cliente.tipoDomicilio}}</div>
       <div class="column">{{cliente.consumo}}$</div>
       <div class="column">{{cliente.deuda}}</div>
-      <div class="column">{{cliente.descuento}}</div>
+      <div class="column">{{cliente.descuento}}%</div>
       <div class="column">{{cliente.montoAPagar}}$</div>
       <div class="column"> <button (click)="deleteItem(cliente.dni)">delete</button> </div>
     </div>
