@@ -2,30 +2,12 @@
 
   <h1>Lista de clientes Thony Electric</h1>
 
-  <div class="container-search">
-    <form [formGroup]="formSearch" (ngSubmit)="search()">
-      <div class="form-group">
-        <input type="text" placeholder="Buscar cliente" formControlName="buscarControls">
-      </div>
-      <button class="btn" type="submit" [disabled]="formSearch.invalid"> Buscar </button>
-    </form>
-    
-    <label for="">Ordenar</label>
-    <input type="checkbox" [(ngModel)]="checkOrdenAlfabetico" (change)="onCheckboxChange()">
-    
-    <label for="">Deudores</label>
-    <input type="checkbox" [(ngModel)]="checkDeudores" (change)="onCheckboxChangeDeudores()">
-    
-    <button class="btn" (click)="resetList()"> Limpiar </button>
-
-  </div>
-
   <div class="container-form">
-    <h2>Carga de cliente</h2>
+    <h2>Carga de clientes</h2>
 
     <form [formGroup]="fromList" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="">Nombre:</label>
+        <label for="">Nombre</label>
         <input type="text" formControlName="nombre">
       </div>
       <div class="form-group">
@@ -53,6 +35,24 @@
         <button class="btn-form" type="submit" [disabled]="fromList.invalid"> Agregar </button>
       </div>
     </form>
+  </div>
+
+  <div class="container-search">
+    <form [formGroup]="formSearch" (ngSubmit)="search()">
+      <div class="form-group">
+        <input type="text" placeholder="Buscar cliente" formControlName="buscarControls">
+      </div>
+      <button class="btn" type="submit" [disabled]="formSearch.invalid"> Buscar </button>
+    </form>
+    
+    <label for="">Ordenar</label>
+    <input type="checkbox" [(ngModel)]="checkOrdenAlfabetico" (change)="onCheckboxChange()">
+    
+    <label for="">Deudores</label>
+    <input type="checkbox" [(ngModel)]="checkDeudores" (change)="onCheckboxChangeDeudores()">
+    
+    <button class="btn" (click)="resetList()"> Limpiar </button>
+
   </div>
 
   <div class="container-list">
