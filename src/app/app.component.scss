@@ -33,28 +33,41 @@
 
   form {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    width: 70%;
-    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
     .form-group {
+      display: flex;
+      flex-direction: column;
       padding: 2px;
       margin: 10px;
+      width: 150px;
+
       label {
         font-weight: bold;
       }
+
       input {
         width: 100%;
         padding: 5px;
         border: 1px solid #ccc;
       }
     }
-    .btn-form {
+
+    .container-btn {
+      width: 100%;
+      justify-content: end;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      // width: 100%;
+      margin-right: 65px;
+      margin-bottom: 14px;
+
+      .btn-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+      }
 
     }
   }
@@ -64,10 +77,12 @@
   padding-bottom: 12px;
   display: flex;
   gap: 10px;
+
   form {
     display: flex;
     gap: 10px;
   }
+
   .form-group {
     display: flex;
     flex-direction: column;
